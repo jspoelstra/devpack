@@ -42,15 +42,18 @@ This is the main intended workflow.
 
 ### Alternative: Cherry-pick Specific Plugins
 
-Instead of copying the entire `apm.yml`, you can reference individual plugins from this repo directly (including local ones via git path):
+Instead of copying the entire `apm.yml`, you can reference individual plugins directly from this repo.
+
+- For local plugins you also copied (`plugins/karpathy-principles`, etc.), use relative paths (`./plugins/...`), matching this repo's own `apm.yml`.
+- Use full `github/jspoelstra/devpack/plugins/...` paths to reference them remotely without copying the `plugins/` folder.
 
 ```yaml
 dependencies:
   apm:
-    - github/jacobspoelstra/devpack/plugins/karpathy-principles
-    - github/jacobspoelstra/devpack/plugins/microsoft-foundry-agents
-    - github/jacobspoelstra/devpack/plugins/anthropic-react-frontend
-    - github/jacobspoelstra/devpack/plugins/azure-infrastructure-architecture
+    - github/jspoelstra/devpack/plugins/karpathy-principles
+    - github/jspoelstra/devpack/plugins/microsoft-foundry-agents
+    - github/jspoelstra/devpack/plugins/anthropic-react-frontend
+    - github/jspoelstra/devpack/plugins/azure-infrastructure-architecture
     - github/awesome-copilot/plugins/context-engineering
     - github/awesome-copilot/plugins/doublecheck
     # ... pick only what you want
@@ -171,7 +174,7 @@ apm pack                              # Create distributable bundles from plugin
 
 ## Future Improvements
 
-- Publish `devpack` (or individual plugins) to a marketplace so new projects can depend on `github/jacobspoelstra/devpack` directly without copying files.
+- Publish `devpack` (or individual plugins) to a marketplace so new projects can depend on `github/jspoelstra/devpack` directly without copying files.
 - Expand the `microsoft-foundry-agents` plugin with additional official Foundry skills (fine-tuning, memory, governance, toolboxes, etc.).
 - Expand `anthropic-react-frontend` with more React/design system skills from Anthropics.
 - Expand `azure-infrastructure-architecture` with more Bicep patterns, Azure AI Search skills, and deployment skills (`azure-deploy`, `azure-validate`).
