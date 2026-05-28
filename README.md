@@ -49,6 +49,8 @@ dependencies:
   apm:
     - github/jacobspoelstra/devpack/plugins/karpathy-principles
     - github/jacobspoelstra/devpack/plugins/microsoft-foundry-agents
+    - github/jacobspoelstra/devpack/plugins/anthropic-react-frontend
+    - github/jacobspoelstra/devpack/plugins/azure-infrastructure-architecture
     - github/awesome-copilot/plugins/context-engineering
     - github/awesome-copilot/plugins/doublecheck
     # ... pick only what you want
@@ -76,12 +78,16 @@ Skills deployed to `.agents/skills/` (available via `/skills` in Grok and auto-d
 | `what-context-needed`  | context-engineering                 | Ask what files/context are needed before answering |
 | `doublecheck`          | doublecheck                         | Three-layer verification to catch hallucinations |
 | `microsoft-foundry`    | Local (`plugins/microsoft-foundry-agents`) | Microsoft AI Foundry router + hosted agents, evaluation/observability, model deployment |
+| `frontend-design`      | Local (`plugins/anthropic-react-frontend`) | Anthropic skill for distinctive, production-grade React + modern frontend (avoids AI slop) |
+| `cloud-solution-architect` | Local (`plugins/azure-infrastructure-architecture`) | Well-Architected Framework, architecture styles, design patterns, and technology selection |
 
 Plus supporting files:
 - `AGENTS.md` (root-level instructions for all AI tools)
 - `.github/copilot-instructions.md` (GitHub Copilot in VSCode)
 - `plugins/karpathy-principles/` — a full APM plugin with skill + ready-to-copy templates
 - `plugins/microsoft-foundry-agents/` — Curated Microsoft AI Foundry agent skills (official microsoft-foundry router + hosted agents, observability, and models)
+- `plugins/anthropic-react-frontend/` — Anthropic skills for high-quality React/frontend development (`frontend-design`, `web-artifacts-builder`)
+- `plugins/azure-infrastructure-architecture/` — Azure Bicep, containers (AKS), and architecture skills (`cloud-solution-architect`, `azure-prepare`, `azure-kubernetes`)
 
 ## Microsoft AI Foundry Agent Skills
 
@@ -134,7 +140,7 @@ apm install some-plugin@awesome-copilot --target agent-skills
 
 After adding, commit the updated `apm.yml` and `apm.lock.yaml`.
 
-You can also create your own local plugins under `plugins/` (see `plugins/karpathy-principles/` and `plugins/microsoft-foundry-agents/` as examples).
+You can also create your own local plugins under `plugins/` (see `plugins/karpathy-principles/`, `plugins/microsoft-foundry-agents/`, `plugins/anthropic-react-frontend/`, and `plugins/azure-infrastructure-architecture/` as examples).
 
 ## Keeping Projects in Sync
 
@@ -167,6 +173,8 @@ apm pack                              # Create distributable bundles from plugin
 
 - Publish `devpack` (or individual plugins) to a marketplace so new projects can depend on `github/jacobspoelstra/devpack` directly without copying files.
 - Expand the `microsoft-foundry-agents` plugin with additional official Foundry skills (fine-tuning, memory, governance, toolboxes, etc.).
+- Expand `anthropic-react-frontend` with more React/design system skills from Anthropics.
+- Expand `azure-infrastructure-architecture` with more Bicep patterns, Azure AI Search skills, and deployment skills (`azure-deploy`, `azure-validate`).
 - Add more local plugins for things you use frequently (e.g. review workflows, project-specific agents, etc.).
 
 This repo exists so you never have to re-explain or re-collect your favorite skills from scratch when starting something new.
