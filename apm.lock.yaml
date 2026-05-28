@@ -51,6 +51,15 @@ local_deployed_files:
 - .agents/skills/agent-framework-azure-ai-py/references/mcp.md
 - .agents/skills/agent-framework-azure-ai-py/references/threads.md
 - .agents/skills/agent-framework-azure-ai-py/references/tools.md
+- .agents/skills/azure-cosmos-db-py/SKILL.md
+- .agents/skills/azure-cosmos-db-py/assets/conftest_template.py
+- .agents/skills/azure-cosmos-db-py/assets/cosmos_client_template.py
+- .agents/skills/azure-cosmos-db-py/assets/service_template.py
+- .agents/skills/azure-cosmos-db-py/references/client-setup.md
+- .agents/skills/azure-cosmos-db-py/references/error-handling.md
+- .agents/skills/azure-cosmos-db-py/references/partitioning.md
+- .agents/skills/azure-cosmos-db-py/references/service-layer.md
+- .agents/skills/azure-cosmos-db-py/references/testing.md
 local_deployed_file_hashes:
   .agents/README.md: sha256:4d25d2fa3148ef97d2d58e1e364790d234e85c4b33540d4c2d5f92c0ffc8353a
   .agents/apm.yml: sha256:d6954652212d504ec122938de896bd32864326344cec0d4d72c0117a75c3dc02
@@ -59,3 +68,12 @@ local_deployed_file_hashes:
   .agents/skills/agent-framework-azure-ai-py/references/mcp.md: sha256:bf8a6075f84f1496200b64692c555dfcd6ff62cc57ae81694ec4427cad461907
   .agents/skills/agent-framework-azure-ai-py/references/threads.md: sha256:8e83cb3f805747e04c257b04ae3667fa1cba07182fbb76bba3127f61d88b422b
   .agents/skills/agent-framework-azure-ai-py/references/tools.md: sha256:a9f45871f4fdbdd7097afd3e47a7ab13590ab044e41ce6d74a64fa56cab54155
+  .agents/skills/azure-cosmos-db-py/SKILL.md: sha256:aed1df0c2b6dc00729f0ebe364d16b133040fc405c5f5511a961972e8d0ad0b0
+  .agents/skills/azure-cosmos-db-py/assets/conftest_template.py: sha256:a5d91776fe91003b791b319bc77a159bd1132feb67561b1874b01555eb3956e8
+  .agents/skills/azure-cosmos-db-py/assets/cosmos_client_template.py: sha256:14334672c94bf4494927848369058bf88c445eb7f923ec2d059ab2b3af533c8d
+  .agents/skills/azure-cosmos-db-py/assets/service_template.py: sha256:ed619b14051241417c109b7cc038dbeaf739885e27d63ff6364609570037cab5
+  .agents/skills/azure-cosmos-db-py/references/client-setup.md: sha256:3f14bfabd628bd358dc0fb0eb7ac141fe233db0fdcbb236005a61c25a29cbfb6
+  .agents/skills/azure-cosmos-db-py/references/error-handling.md: sha256:daba3df814fa917e3640fb864c25012bf5fb7c6bf7df3fc2ae4b131b8fc9b5c4
+  .agents/skills/azure-cosmos-db-py/references/partitioning.md: sha256:23d285c72343f7bca0d0cbc352f2f0bfa1c141545e4149408884ac613a64fdac
+  .agents/skills/azure-cosmos-db-py/references/service-layer.md: sha256:002c9f30299457b625c493a9408aa004a483e10af1211bd494fa4a96854caaf3
+  .agents/skills/azure-cosmos-db-py/references/testing.md: sha256:94449b58a3c6b0f6fd7314a0de669bfb85fd5e84a5a8efd1683cdfaa5fe0514f

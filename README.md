@@ -84,6 +84,7 @@ Skills deployed to `.agents/skills/` (available via `/skills` in Grok and auto-d
 | `agent-framework-azure-ai-py` | Local (`plugins/microsoft-agent-framework`) | Microsoft Agent Framework (MAF) Python SDK — persistent agents, hosted tools, threads, streaming, MCP integration |
 | `frontend-design`      | Local (`plugins/anthropic-react-frontend`) | Anthropic skill for distinctive, production-grade React + modern frontend (avoids AI slop) |
 | `cloud-solution-architect` | Local (`plugins/azure-infrastructure-architecture`) | Well-Architected Framework, architecture styles, design patterns, and technology selection |
+| `azure-cosmos-db-py`   | Local (`plugins/azure-cosmos`)        | Production Azure Cosmos DB patterns (FastAPI service layer, dual auth, partitioning, TDD) |
 
 Plus supporting files:
 - `AGENTS.md` (root-level instructions for all AI tools)
@@ -93,6 +94,7 @@ Plus supporting files:
 - `plugins/microsoft-agent-framework/` — Microsoft Agent Framework (MAF) Python SDK skill for persistent agents (`agent-framework-azure-ai-py`)
 - `plugins/anthropic-react-frontend/` — Anthropic skills for high-quality React/frontend development (`frontend-design`, `web-artifacts-builder`)
 - `plugins/azure-infrastructure-architecture/` — Azure Bicep, containers (AKS), and architecture skills (`cloud-solution-architect`, `azure-prepare`, `azure-kubernetes`)
+- `plugins/azure-cosmos/` — Production Azure Cosmos DB NoSQL patterns for Python/FastAPI (`azure-cosmos-db-py`)
 
 ## Microsoft AI Foundry Agent Skills
 
