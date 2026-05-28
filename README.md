@@ -15,9 +15,9 @@ This is the main intended workflow.
    - `apm.yml` (the curated list of dependencies)
    - `plugins/` (only needed if you want your local plugins, such as `karpathy-principles` or `microsoft-foundry-agents`)
 
-2. **(Optional but recommended)** Also copy useful root files:
-   - `AGENTS.md`
-   - `.github/copilot-instructions.md`
+2. **(Optional but recommended)** Copy the generic agent guidelines templates:
+   - `plugins/karpathy-principles/templates/AGENTS.md` → `AGENTS.md`
+   - `plugins/karpathy-principles/templates/copilot-instructions.md` → `.github/copilot-instructions.md`
 
 3. Run the install:
 
