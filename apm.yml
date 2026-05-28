@@ -8,6 +8,7 @@ dependencies:
   - ./plugins/microsoft-foundry-agents          # Microsoft AI Foundry agent skills (hosted agents, observability, models)
   - ./plugins/anthropic-react-frontend          # Anthropic Claude skills for high-quality React/frontend (frontend-design + web-artifacts-builder)
   - ./plugins/azure-infrastructure-architecture # Azure Bicep, containers (AKS), and architecture (Well-Architected, patterns)
+  - ./plugins/microsoft-agent-framework         # Microsoft Agent Framework (MAF) Python SDK skill for persistent Foundry agents
   - johnpapa/ai-ready/.github/plugin#b993d6512c918d8a21a61b7931726f5980c3c920
   - github/awesome-copilot/plugins/context-engineering
   - github/awesome-copilot/plugins/doublecheck

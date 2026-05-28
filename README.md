@@ -81,6 +81,7 @@ Skills deployed to `.agents/skills/` (available via `/skills` in Grok and auto-d
 | `what-context-needed`  | context-engineering                 | Ask what files/context are needed before answering |
 | `doublecheck`          | doublecheck                         | Three-layer verification to catch hallucinations |
 | `microsoft-foundry`    | Local (`plugins/microsoft-foundry-agents`) | Microsoft AI Foundry router + hosted agents, evaluation/observability, model deployment |
+| `agent-framework-azure-ai-py` | Local (`plugins/microsoft-agent-framework`) | Microsoft Agent Framework (MAF) Python SDK — persistent agents, hosted tools, threads, streaming, MCP integration |
 | `frontend-design`      | Local (`plugins/anthropic-react-frontend`) | Anthropic skill for distinctive, production-grade React + modern frontend (avoids AI slop) |
 | `cloud-solution-architect` | Local (`plugins/azure-infrastructure-architecture`) | Well-Architected Framework, architecture styles, design patterns, and technology selection |
 
@@ -89,6 +90,7 @@ Plus supporting files:
 - `.github/copilot-instructions.md` (GitHub Copilot in VSCode)
 - `plugins/karpathy-principles/` — a full APM plugin with skill + ready-to-copy templates
 - `plugins/microsoft-foundry-agents/` — Curated Microsoft AI Foundry agent skills (official microsoft-foundry router + hosted agents, observability, and models)
+- `plugins/microsoft-agent-framework/` — Microsoft Agent Framework (MAF) Python SDK skill for persistent agents (`agent-framework-azure-ai-py`)
 - `plugins/anthropic-react-frontend/` — Anthropic skills for high-quality React/frontend development (`frontend-design`, `web-artifacts-builder`)
 - `plugins/azure-infrastructure-architecture/` — Azure Bicep, containers (AKS), and architecture skills (`cloud-solution-architect`, `azure-prepare`, `azure-kubernetes`)
 
@@ -109,21 +111,33 @@ This pack includes a curated selection of official **Microsoft AI Foundry** (Azu
 
 These skills are especially powerful for end-to-end agent development on Foundry (create → deploy → invoke → observe/optimize loops).
 
+### Companion Plugin: Microsoft Agent Framework SDK
+
+For deep work with the **Microsoft Agent Framework** (the recommended Python SDK for building persistent, stateful agents on Foundry), use the sibling plugin:
+
+- `plugins/microsoft-agent-framework/` — Provides `agent-framework-azure-ai-py`
+
+This gives official patterns for `AzureAIAgentsProvider`, hosted tools, `AgentThread`, streaming, MCP integration, structured outputs, etc.
+
+Install both when you need the full picture:
+- `microsoft-foundry-agents` → platform + deployment + observability
+- `microsoft-agent-framework` → low-level SDK coding patterns
+
 ### Usage
 
-After installing the plugin (`apm install ./plugins/microsoft-foundry-agents --target agent-skills`), the skills become available via:
+After installing the plugins, skills become available via:
 
 - `/skills microsoft-foundry`
-- `/skills foundry-hosted-agents`
+- `/skills agent-framework-azure-ai-py`
 - etc.
 
 The `microsoft-foundry` router is designed to be loaded first in most cases — it will guide you to the correct detailed sub-skill and mandatory pre-checks.
 
 ### Why Curated?
 
-The full Microsoft Foundry skill set is very comprehensive. This plugin includes the highest-signal skills for typical agent development workflows while keeping context manageable.
+The full Microsoft Foundry skill set is very comprehensive. These plugins include the highest-signal skills for typical agent development workflows while keeping context manageable.
 
-You can request additional skills from the Microsoft collection (e.g. `finetuning`, `foundry-governance`, `foundry-memory`, etc.) to be added to this plugin.
+You can request additional skills from the Microsoft collection (e.g. `finetuning`, `foundry-governance`, `foundry-memory`, MAF support for other languages, etc.) to be added.
 
 ## Adding More Skills
 

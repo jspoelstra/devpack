@@ -43,3 +43,19 @@ dependencies:
   is_virtual: true
   package_type: marketplace_plugin
   content_hash: sha256:5bce1874732b7b76c1becb877e57cb60e05458e1e193879ea51065aa2638f517
+local_deployed_files:
+- .agents/README.md
+- .agents/apm.yml
+- .agents/skills/agent-framework-azure-ai-py/SKILL.md
+- .agents/skills/agent-framework-azure-ai-py/references/advanced.md
+- .agents/skills/agent-framework-azure-ai-py/references/mcp.md
+- .agents/skills/agent-framework-azure-ai-py/references/threads.md
+- .agents/skills/agent-framework-azure-ai-py/references/tools.md
+local_deployed_file_hashes:
+  .agents/README.md: sha256:4d25d2fa3148ef97d2d58e1e364790d234e85c4b33540d4c2d5f92c0ffc8353a
+  .agents/apm.yml: sha256:d6954652212d504ec122938de896bd32864326344cec0d4d72c0117a75c3dc02
+  .agents/skills/agent-framework-azure-ai-py/SKILL.md: sha256:98c074225b3ac4d0d537721ebaad304d77cf6080dd9374c5c82e31a831dec6c8
+  .agents/skills/agent-framework-azure-ai-py/references/advanced.md: sha256:668490db8d62ffcd5a75ab657a96d1b2986d1811626c1975a3b8217e428a1282
+  .agents/skills/agent-framework-azure-ai-py/references/mcp.md: sha256:bf8a6075f84f1496200b64692c555dfcd6ff62cc57ae81694ec4427cad461907
+  .agents/skills/agent-framework-azure-ai-py/references/threads.md: sha256:8e83cb3f805747e04c257b04ae3667fa1cba07182fbb76bba3127f61d88b422b
+  .agents/skills/agent-framework-azure-ai-py/references/tools.md: sha256:a9f45871f4fdbdd7097afd3e47a7ab13590ab044e41ce6d74a64fa56cab54155
