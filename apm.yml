@@ -1,0 +1,14 @@
+name: devpack
+version: 1.0.0
+description: APM project for devpack
+author: Jacob Spoelstra
+dependencies:
+  apm:
+  - ./plugins/karpathy-principles          # Local Karpathy guidelines (skill + AGENTS.md templates)
+  - johnpapa/ai-ready/.github/plugin#b993d6512c918d8a21a61b7931726f5980c3c920
+  - github/awesome-copilot/plugins/context-engineering
+  - github/awesome-copilot/plugins/doublecheck
+  - github/awesome-copilot/plugins/software-engineering-team
+  mcp: []
+includes: auto
+scripts: {}
