@@ -13,7 +13,7 @@ This is the main intended workflow.
 1. **In the new project**, copy the following from `devpack`:
 
    - `apm.yml` (the curated list of dependencies)
-   - `plugins/` (only needed if you want your local plugins, such as `karpathy-principles`)
+   - `plugins/` (only needed if you want your local plugins, such as `karpathy-principles` or `microsoft-foundry-agents`)
 
 2. **(Optional but recommended)** Also copy useful root files:
    - `AGENTS.md`
@@ -48,6 +48,7 @@ Instead of copying the entire `apm.yml`, you can reference individual plugins fr
 dependencies:
   apm:
     - github/jacobspoelstra/devpack/plugins/karpathy-principles
+    - github/jacobspoelstra/devpack/plugins/microsoft-foundry-agents
     - github/awesome-copilot/plugins/context-engineering
     - github/awesome-copilot/plugins/doublecheck
     # ... pick only what you want
@@ -74,11 +75,46 @@ Skills deployed to `.agents/skills/` (available via `/skills` in Grok and auto-d
 | `refactor-plan`        | context-engineering                 | Create a concrete plan before multi-file refactors |
 | `what-context-needed`  | context-engineering                 | Ask what files/context are needed before answering |
 | `doublecheck`          | doublecheck                         | Three-layer verification to catch hallucinations |
+| `microsoft-foundry`    | Local (`plugins/microsoft-foundry-agents`) | Microsoft AI Foundry router + hosted agents, evaluation/observability, model deployment |
 
 Plus supporting files:
 - `AGENTS.md` (root-level instructions for all AI tools)
 - `.github/copilot-instructions.md` (GitHub Copilot in VSCode)
 - `plugins/karpathy-principles/` — a full APM plugin with skill + ready-to-copy templates
+- `plugins/microsoft-foundry-agents/` — Curated Microsoft AI Foundry agent skills (official microsoft-foundry router + hosted agents, observability, and models)
+
+## Microsoft AI Foundry Agent Skills
+
+This pack includes a curated selection of official **Microsoft AI Foundry** (Azure AI Foundry) agent skills, packaged as a local APM plugin.
+
+**Source:** Curated from the excellent official collection at [microsoft/skills](https://github.com/microsoft/skills) (specifically the `azure-skills` plugin).
+
+### Included Skills
+
+| Skill                    | Purpose |
+|--------------------------|---------|
+| `microsoft-foundry`      | Main router skill. Intelligently maps your intent to the right sub-skill, discovery steps, and MCP tools. Excellent starting point for almost all Foundry work. |
+| `foundry-hosted-agents`  | Building, deploying, and managing containerized hosted agents (using Microsoft Agent Framework, LangGraph, custom code, etc.). |
+| `foundry-observability`  | Evaluation, tracing, batch + continuous evaluation, prompt optimization, and production monitoring. |
+| `foundry-models`         | Model discovery, preset & custom deployments, capacity planning, and quota management. |
+
+These skills are especially powerful for end-to-end agent development on Foundry (create → deploy → invoke → observe/optimize loops).
+
+### Usage
+
+After installing the plugin (`apm install ./plugins/microsoft-foundry-agents --target agent-skills`), the skills become available via:
+
+- `/skills microsoft-foundry`
+- `/skills foundry-hosted-agents`
+- etc.
+
+The `microsoft-foundry` router is designed to be loaded first in most cases — it will guide you to the correct detailed sub-skill and mandatory pre-checks.
+
+### Why Curated?
+
+The full Microsoft Foundry skill set is very comprehensive. This plugin includes the highest-signal skills for typical agent development workflows while keeping context manageable.
+
+You can request additional skills from the Microsoft collection (e.g. `finetuning`, `foundry-governance`, `foundry-memory`, etc.) to be added to this plugin.
 
 ## Adding More Skills
 
@@ -98,7 +134,7 @@ apm install some-plugin@awesome-copilot --target agent-skills
 
 After adding, commit the updated `apm.yml` and `apm.lock.yaml`.
 
-You can also create your own local plugins under `plugins/` (see `plugins/karpathy-principles/` as an example).
+You can also create your own local plugins under `plugins/` (see `plugins/karpathy-principles/` and `plugins/microsoft-foundry-agents/` as examples).
 
 ## Keeping Projects in Sync
 
@@ -130,6 +166,7 @@ apm pack                              # Create distributable bundles from plugin
 ## Future Improvements
 
 - Publish `devpack` (or individual plugins) to a marketplace so new projects can depend on `github/jacobspoelstra/devpack` directly without copying files.
+- Expand the `microsoft-foundry-agents` plugin with additional official Foundry skills (fine-tuning, memory, governance, toolboxes, etc.).
 - Add more local plugins for things you use frequently (e.g. review workflows, project-specific agents, etc.).
 
 This repo exists so you never have to re-explain or re-collect your favorite skills from scratch when starting something new.
