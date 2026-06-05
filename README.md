@@ -15,7 +15,7 @@ This is the main intended workflow.
    The dependencies in `apm.yml` already point to `github/jspoelstra/devpack/plugins/...`, so no local `plugins/` copy is required.
 
 2. **(Optional but recommended)** Copy the generic agent guidelines templates:
-   - `plugins/karpathy-principles/templates/AGENTS.md` → `AGENTS.md`
+   - `plugins/karpathy-principles/templates/AGENTS.generic.md` → `AGENTS.md`
    - `plugins/karpathy-principles/templates/copilot-instructions.md` → `.github/copilot-instructions.md`
 
 3. Run the install:
