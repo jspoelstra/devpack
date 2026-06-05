@@ -10,10 +10,9 @@ This is the main intended workflow.
 
 ### Recommended Approach: Copy the Manifest
 
-1. **In the new project**, copy the following from `devpack`:
+1. **In the new project**, copy `apm.yml` from `devpack`.
 
-   - `apm.yml` (the curated list of dependencies)
-   - `plugins/` (only needed if you want your local plugins, such as `karpathy-principles` or `microsoft-foundry-agents`)
+   The dependencies in `apm.yml` already point to `github/jspoelstra/devpack/plugins/...`, so no local `plugins/` copy is required.
 
 2. **(Optional but recommended)** Copy the generic agent guidelines templates:
    - `plugins/karpathy-principles/templates/AGENTS.md` → `AGENTS.md`
@@ -42,10 +41,7 @@ This is the main intended workflow.
 
 ### Alternative: Cherry-pick Specific Plugins
 
-Instead of copying the entire `apm.yml`, you can reference individual plugins directly from this repo.
-
-- For local plugins you also copied (`plugins/karpathy-principles`, etc.), use relative paths (`./plugins/...`), matching this repo's own `apm.yml`.
-- Use full `github/jspoelstra/devpack/plugins/...` paths to reference them remotely without copying the `plugins/` folder.
+Instead of copying the entire `apm.yml`, you can reference individual plugins directly from this repo using `github/jspoelstra/devpack/plugins/...`.
 
 ```yaml
 dependencies:
@@ -65,7 +61,7 @@ This is great when you only need a subset.
 
 ```bash
 mkdir my-new-project && cd my-new-project
-# Copy apm.yml (and plugins/ if desired) from ~/git/devpack
+# Copy apm.yml from ~/git/devpack
 apm install --target agent-skills
 ```
 
@@ -163,7 +159,7 @@ You can also create your own local plugins under `plugins/` (see `plugins/karpat
 
 ## Keeping Projects in Sync
 
-- When you improve `devpack`, just copy the latest `apm.yml` (and `plugins/` if changed) into existing projects and re-run `apm install`.
+- When you improve `devpack`, just copy the latest `apm.yml` into existing projects and re-run `apm install`.
 - Or update individual lines in a project's `apm.yml` to point at newer commits of plugins from this repo.
 - Use `apm update` in projects when you want to pull the latest resolved versions.
 
