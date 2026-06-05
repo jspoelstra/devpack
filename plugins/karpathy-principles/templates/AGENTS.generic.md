@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Behavioral guidelines for AI coding agents (GitHub Copilot, Claude, Cursor, Aider, etc.) used in this repository.
+Behavioral guidelines for AI coding agents (Grok, GitHub Copilot, Claude, Cursor, Aider, etc.) used in this repository.
 
 These principles are intended to reduce common agent mistakes and keep changes safe, clear, and reviewable.
 
